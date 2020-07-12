@@ -8,11 +8,13 @@ services:
     volumes:
       - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
   weba:
-    image: "httpd:2.4"
+    # image: "httpd:2.4"
+    image: "php:7.4-apache"
     ports:
         - "8081:80"
     volumes:
-        - ./a.html:/usr/local/apache2/htdocs/index.html
+        # - ./a.html:/usr/local/apache2/htdocs/index.html
+        - ./a.php:/var/www/html/index.php
   webb:
     image: "httpd:2.4"
     ports:
